@@ -6,8 +6,8 @@
 固件在 [m2468-firmware](https://github.com/leluo123/m2468-firmware)。
 这个仓库放的是两者之间那一层：让系统能真正用起来的 configuration 和 daemon。
 
-rootfs 本体用的是 Debian（phosh 桌面），我们没有重造轮子，只在上面加东西。
-下面这些都是 A→Z 手写或改出来的。
+rootfs 本体是 postmarketOS v26.06（Alpine 系）+ phosh 桌面，我们没有重造轮子，只在上面加东西。
+下面这些都是手写或改出来的。
 
 ## 目录
 
