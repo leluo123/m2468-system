@@ -1,0 +1,17 @@
+[Unit]
+Description=m2468 mobile data (WDS + rmnet)
+After=rmtfs-dir.service tqftpserv.service
+Wants=rmtfs-dir.service tqftpserv.service
+
+[Service]
+Type=simple
+Environment=M2468_APN=cmnet
+Environment=M2468_MUX=0xF8
+ExecStart=/usr/bin/python3 -u /root/data_daemon.py
+Restart=always
+RestartSec=15
+StandardOutput=append:/root/data.log
+StandardError=append:/root/data.log
+
+[Install]
+WantedBy=multi-user.target

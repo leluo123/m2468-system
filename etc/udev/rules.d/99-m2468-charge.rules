@@ -1,0 +1,1 @@
+SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_NAME}=="qcom-battmgr-usb", ATTR{input_current_limit}="900000"

@@ -1,0 +1,3 @@
+# <file system> <mount point> <type> <options> <dump> <pass>
+UUID=ad7dae71-a953-485d-b186-6030c3d92e7d / ext4 defaults 0 0
+tmpfs /dev/shm tmpfs rw,nosuid,nodev,size=512M,mode=1777 0 0

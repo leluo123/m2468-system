@@ -1,0 +1,11 @@
+[Unit]
+Description=Raise USB input current limit (m2468)
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo 900000 > /sys/class/power_supply/qcom-battmgr-usb/input_current_limit"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

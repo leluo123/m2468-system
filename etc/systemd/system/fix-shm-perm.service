@@ -1,0 +1,14 @@
+[Unit]
+Description=Fix /dev/shm permissions
+DefaultDependencies=no
+After=dev-shm.mount dev-mqueue.mount
+Before=greetd.service
+ConditionPathExists=/dev/shm
+
+[Service]
+Type=oneshot
+ExecStart=/bin/chmod 1777 /dev/shm
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

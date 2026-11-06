@@ -1,0 +1,15 @@
+[Unit]
+Description=m2468 modem bringup (SIM session + bind subscription + online)
+After=rmtfs-dir.service tqftpserv.service ModemManager.service
+Wants=rmtfs-dir.service tqftpserv.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 -u /root/modem_daemon.py
+Restart=on-failure
+RestartSec=20
+StandardOutput=append:/root/modem_daemon.log
+StandardError=append:/root/modem_daemon.log
+
+[Install]
+WantedBy=multi-user.target

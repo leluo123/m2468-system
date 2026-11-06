@@ -1,0 +1,13 @@
+[Unit]
+Description=m2468 CPU governor + freq cap (fix random reboot from perf governor)
+After=multi-user.target sysinit.target
+ConditionPathExists=/sys/devices/system/cpu/cpufreq/policy0
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=/bin/sleep 3
+ExecStart=/usr/local/bin/m2468-cpufreq.sh
+
+[Install]
+WantedBy=multi-user.target
